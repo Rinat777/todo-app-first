@@ -1,17 +1,6 @@
-const TodoItem = ({ myKey, id, labelName }) => {
-  return React.createElement("div", { className: "todo-item" }, [
-    React.createElement("input", {
-      type: "checkbox",
-      key: myKey,
-      id: id,
-    }),
-    React.createElement(
-      "label",
-      { key: `label-${myKey}`, htmlFor: id },
-      labelName,
-    ),
-  ]);
-};
+import React from "react";
+import { createRoot } from "react-dom/client";
+import TodoItem from "./Todoitem";
 
 const App = () => {
   return React.createElement(
@@ -37,4 +26,4 @@ const App = () => {
     ],
   );
 };
-ReactDOM.render(React.createElement(App), document.getElementById("root"));
+createRoot(document.getElementById("root")).render(React.createElement(App));
